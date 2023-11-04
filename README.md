@@ -1,8 +1,10 @@
 # newman-reorder-requests
 
-While creating a collection in Postman, one usually groups collections in folders according to common resources, topics or whatever. This ordering does not necessarily reflect the order in which they are supposed to be executed. For instance, if your server manages 2 different types of resources, say users and hats, you may want to first create a user, then a hat, then attribute the hat to the user, and then check if the user's hat property has actually been set. To do so, you will need to execute some requests in the "users" folder, then in the "hats" folder, and then in "users" again. That is what `postman.setNextRequest()` helps you to do.
+While creating a collection in [Postman](https://www.postman.com/), one usually groups collections in folders according to common resources, topics or whatever. This ordering does not necessarily reflect the order in which they are supposed to be executed.
 
-While this instruction works well when running the collection in Postman, other collection runners have trouble making it work at runtime. **This small application is able to load one or multiple collection(s) created in Postman, reorder the requests according to the workflow specified with `postman.setNextRequest()` instructions in request tests, and run the resulting collection with newman.**
+For instance, if your server manages 2 different types of resources, say _users_ and _hats_, you may want to store them in two different so-called folders. But when running the collection, you may define a test workflow that first creates a user, then a hat, then attributes the hat to the user, and finally checks if the user's hat property has actually been set. To do so, you will need to execute some requests in the _users_ folder, then in the _hats_ folder, and then in _users_ again. That is what `postman.setNextRequest()` helps you to do.
+
+While this instruction works well when running the collection in Postman, other collection runners have trouble making it work at runtime. **This small application is able to load one or multiple collection(s) created in Postman, reorder the requests according to the workflow specified with `postman.setNextRequest()` instructions in request tests, and run the resulting collection with [newman](https://github.com/postmanlabs/newman).**
 
 Features (or bugs or todos):
 
@@ -18,7 +20,7 @@ Features (or bugs or todos):
 
 ## Installation
 
-**Requirements:** NodeJS, NPM (or Yarn)
+**Requirements:** [NodeJS](https://nodejs.org/), [NPM](https://www.npmjs.com/) (or [Yarn](https://yarnpkg.com/))
 
 ```sh
 git clone https://github.com/lmedini/newman-reorder-requests
@@ -42,9 +44,15 @@ TODO: improve argument processing...
 
 ## Reporters
 
-Works out-of-the-box with all built-in newman reporters, plus html-extra, which is the default. When file reports are created, they are placed in the `newman` directory.
+Works out-of-the-box with all [built-in newman reporters](https://learning.postman.com/docs/collections/using-newman-cli/newman-built-in-reporters/), plus [html-extra](https://github.com/DannyDainton/newman-reporter-htmlextra), which is the default. When file reports are created, they are placed in the `newman` directory.
 
 Additional reporters can be used by:
 
 - Installing them in the project: `npm i newman-reporter-csv`
 - Passing them as argument: `npm start reporters=csv`
+
+## License
+
+**Note:** "Postman" and "newman" are trademarks of Postman, Inc.
+
+The components of this work that are not subject to any other license are licensed under a [Cecill-C](https://cecill.info/licences/Licence_CeCILL-C_V1-en.txt) license.
