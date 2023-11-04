@@ -39,3 +39,12 @@ mkdir collections
 `npm start my-collection-export.json reporters=cli ignoreRedirects=true` (argument order is not relevant)
 
 TODO: improve argument processing...
+
+## Reporters
+
+Works out-of-the-box with all built-in newman reporters, plus html-extra, which is the default. When file reports are created, they are placed in the `newman` directory.
+
+Additional reporters can be used by:
+
+- Installing them in the project: `npm i newman-reporter-csv`
+- Passing them as argument: `npm start reporters=csv`
