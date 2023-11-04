@@ -13,7 +13,7 @@ Features (or bugs or todos):
   - no "intelligent", nor runtime processing is done for the reordering (only string matching) -> won't work well if `postman.setNextRequest()` are inside `if` blocks for instance, or if its argument is a variable instead of a simple string
   - only performs reordering - and not copy - of the requests -> loops are not permitted
   - `postman.setNextRequest()` lines are commented in the transformed collection -> make sure nothing else is useful on these lines
-- flattens the collection folder hierarchy (at least of one level) -> may produce multiple folders if subfolders are split during the reordering operation
+- flattens the collection folder hierarchy (at least of one level) -> may produce multiple folders if subfolders are split during the reordering operation (can help to understand the different steps of the workflow, so let's call this a feature...)
 - preserves collection metadata (eg. name and variables) -> use `pm.collectionVariables` and not `pm.environmentVariables` in scripts
 - searches for Postman collections in the `collections` folder -> make sure to create it if not present after clone, and to place collections in there; if no collection file name passed as argument, will process all JSON files in this fiolder
 - allows for passing options to newman runner (see below)
