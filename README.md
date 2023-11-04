@@ -4,7 +4,8 @@ While creating a collection in [Postman](https://www.postman.com/), one usually 
 
 For instance, if your server manages 2 different types of resources, say _users_ and _hats_, you may want to store them in two different so-called folders. But when running the collection, you may define a test workflow that first creates a user, then a hat, then attributes the hat to the user, and finally checks if the user's hat property has actually been set. To do so, you will need to execute some requests in the _users_ folder, then in the _hats_ folder, and then in _users_ again. That is what `postman.setNextRequest()` helps you to do.
 
-While this instruction works well when running the collection in Postman, other collection runners have trouble making it work at runtime. **This small application is able to load one or multiple collection(s) created in Postman, reorder the requests according to the workflow specified with `postman.setNextRequest()` instructions in request tests, and run the resulting collection with [newman](https://github.com/postmanlabs/newman).**
+While this instruction works well when running the collection in Postman, other collection runners have trouble making it work at runtime.<br>
+**This small application is able to load one or multiple collection(s) created in Postman, reorder the requests according to the workflow specified with `postman.setNextRequest()` instructions in request tests, and run the resulting collection with [newman](https://github.com/postmanlabs/newman).**
 
 Features (or bugs or todos):
 
@@ -15,7 +16,7 @@ Features (or bugs or todos):
   - `postman.setNextRequest()` lines are commented in the transformed collection -> make sure nothing else is useful on these lines
 - flattens the collection folder hierarchy (at least of one level) -> may produce multiple folders if subfolders are split during the reordering operation (can help to understand the different steps of the workflow, so let's call this a feature...)
 - preserves collection metadata (eg. name and variables) -> use `pm.collectionVariables` and not `pm.environmentVariables` in scripts
-- searches for Postman collections in the `collections` folder -> make sure to create it if not present after clone, and to place collections in there; if no collection file name passed as argument, will process all JSON files in this fiolder
+- searches for Postman collections in the `collections` folder -> make sure to create it if not present after clone, and to place collections in there; if no collection file name passed as argument, will process all JSON files in this folder
 - allows for passing options to newman runner (see below)
 
 ## Installation
