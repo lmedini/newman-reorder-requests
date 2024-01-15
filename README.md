@@ -41,8 +41,6 @@ mkdir collections
 - To process one collection in the `collections` folder and pass options to newman:<br>
 `npm start my-collection-export.json reporters=cli ignoreRedirects=true` (argument order is not relevant)
 
-TODO: improve argument processing...
-
 ## Reporters
 
 Works out-of-the-box with all [built-in newman reporters](https://learning.postman.com/docs/collections/using-newman-cli/newman-built-in-reporters/), plus [html-extra](https://github.com/DannyDainton/newman-reporter-htmlextra), which is the default. When file reports are created, they are placed in the `newman` directory.
@@ -50,7 +48,13 @@ Works out-of-the-box with all [built-in newman reporters](https://learning.postm
 Additional reporters can be used by:
 
 - Installing them in the project: `npm i newman-reporter-csv`
-- Passing them as argument: `npm start reporters=csv`
+- Passing them as argument: `npm start my-collection-export.json reporters=csv` (suppress the leading "newman-reporter-" in the reporter name)
+
+## Complete example with iteration data and corresponding reporter
+
+- Do the "Installation step"
+- `npm i newman-reporter-iteration-tests`
+- `npm start my-collection-export.json reporters=iteration-tests interactionData=myData.csv`
 
 ## License
 
