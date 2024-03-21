@@ -54,7 +54,7 @@ Additional reporters can be used by:
 
 - Do the "Installation step"
 - `npm i newman-reporter-iteration-tests`
-- `npm start my-collection-export.json reporters=iteration-tests interactionData=myData.csv`
+- `npm start my-collection-export.json reporters=iteration-tests iterationData=myData.csv`
 
 ## License
 
